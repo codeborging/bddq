@@ -23,7 +23,7 @@ Many agree that test cases serve as excellent documentation because they:
 This tool allows us to document our code and give AI systems a chance to
 generate some of it for us based on careful specs with test cases. 
 
-## Features
+## Key Functions used to Document Code
 
 - **testSetNew**: Specifies where the tests should be stored.
 - **addDoc**: Defines the function name and provides a description of what it does.
@@ -32,6 +32,10 @@ generate some of it for us based on careful specs with test cases.
 - **addTest**: Constructs a test that will be runnable using [`k4unit.q`](https://github.com/DataIntellectTech/TorQ/blob/master/tests/k4unit.q).
 
 We call these above 5 functions in the code files with the q code we want to test.
+
+## Other Functions 
+
+- **runTests[]**: Invoke k4unit.q and display the failing tests.
 
 See the example arecursion.q. 
 
