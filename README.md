@@ -112,10 +112,11 @@ codebases. By using this tool, you can ensure that your function
 specifications and test cases are always in sync, boosting your
 confidence in the correctness of your code.
 
-## Actually Running an Example
+## Here is how we get an example running
 
 ```
-cd examples
+$ git clone git@github.com:codeborging/bddq.git
+$ cd bddq/examples
 $ q loader.q -p 6002
 q)\l arecursion.q
 q)runTests[]
