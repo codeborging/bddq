@@ -112,3 +112,16 @@ codebases. By using this tool, you can ensure that your function
 specifications and test cases are always in sync, boosting your
 confidence in the correctness of your code.
 
+## Actually Running an Example
+
+```
+cd examples
+$ q loader.q -p 6002
+q)\l arecursion.q
+q)runTests[]
+2024.06.24T19:24:35.935 start
+2024.06.24T19:24:35.935 :tests/descend.csv 8 test(s)
+2024.06.24T19:24:35.937 end
+"All tests passed"
+```
+
