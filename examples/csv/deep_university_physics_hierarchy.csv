@@ -1,0 +1,101 @@
+ID,Super Component ID,Description,Price,Cost
+1,0,University,1000,700
+2,1,Department,1010,707
+3,2,Laboratory,1020,714
+4,3,Experiment Setup,1030,721
+5,4,Physics Hardware,1040,728
+6,5,Main Frame,1050,735
+7,6,Support Structure,1060,742
+8,7,Panel,1070,749
+9,8,Control Unit,1080,756
+10,9,Circuit Board,1090,763
+11,10,Power Supply,1100,770
+12,11,Cooling System,1110,777
+13,12,Sensor Array,1120,784
+14,13,Detector,1130,791
+15,14,Calibration Unit,1140,798
+16,15,Signal Processor,1150,805
+17,16,Data Storage,1160,812
+18,17,Network Interface,1170,819
+19,18,Software Interface,1180,826
+20,19,User Terminal,1190,833
+21,20,Security Module,1200,840
+22,21,Encryption Unit,1210,847
+23,22,Decryption Unit,1220,854
+24,23,Transmission Cable,1230,861
+25,24,Connector,1240,868
+26,25,Adaptor,1250,875
+27,26,Fuse,1260,882
+28,27,Switch,1270,889
+29,28,Button,1280,896
+30,29,Display,1290,903
+31,30,Indicator Light,1300,910
+32,31,Microchip,1310,917
+33,32,Processor,1320,924
+34,33,Memory Unit,1330,931
+35,34,Hard Drive,1340,938
+36,35,Graphics Card,1350,945
+37,36,Motherboard,1360,952
+38,37,Expansion Card,1370,959
+39,38,Power Connector,1380,966
+40,39,Network Card,1390,973
+41,40,USB Port,1400,980
+42,41,Audio Interface,1410,987
+43,42,Video Interface,1420,994
+44,43,Cooling Fan,1430,1001
+45,44,Heat Sink,1440,1008
+46,45,Vent,1450,1015
+47,46,Filter,1460,1022
+48,47,Pump,1470,1029
+49,48,Valve,1480,1036
+50,49,Tube,1490,1043
+51,50,Pipe,1500,1050
+52,51,Conduit,1510,1057
+53,52,Wiring Harness,1520,1064
+54,53,Cable Bundle,1530,1071
+55,54,Terminal Block,1540,1078
+56,55,Junction Box,1550,1085
+57,56,Relay,1560,1092
+58,57,Diode,1570,1099
+59,58,Transistor,1580,1106
+60,59,Capacitor,1590,1113
+61,60,Inductor,1600,1120
+62,61,Resistor,1610,1127
+63,62,Potentiometer,1620,1134
+64,63,Oscillator,1630,1141
+65,64,Amplifier,1640,1148
+66,65,Waveguide,1650,1155
+67,66,Lens,1660,1162
+68,67,Mirror,1670,1169
+69,68,Prism,1680,1176
+70,69,Fiber Optic Cable,1690,1183
+71,70,Laser,1700,1190
+72,71,Detector Element,1710,1197
+73,72,Sample Holder,1720,1204
+74,73,Mounting Bracket,1730,1211
+75,74,Clamp,1740,1218
+76,75,Screw,1750,1225
+77,76,Nut,1760,1232
+78,77,Bolt,1770,1239
+79,78,Washer,1780,1246
+80,79,Spacer,1790,1253
+81,80,Gasket,1800,1260
+82,81,Seal,1810,1267
+83,82,O-ring,1820,1274
+84,83,Pin,1830,1281
+85,84,Clip,1840,1288
+86,85,Spring,1850,1295
+87,86,Gear,1860,1302
+88,87,Bearing,1870,1309
+89,88,Axle,1880,1316
+90,89,Shaft,1890,1323
+91,90,Arm,1900,1330
+92,91,Lever,1910,1337
+93,92,Dial,1920,1344
+94,93,Gauge,1930,1351
+95,94,Meter,1940,1358
+96,95,Sensor,1950,1365
+97,96,Probe,1960,1372
+98,97,Emitter,1970,1379
+99,98,Collector,1980,1386
+100,99,Shield,1990,1393

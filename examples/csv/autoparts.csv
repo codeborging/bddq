@@ -1,0 +1,17 @@
+ID,Super Component ID,Description,Price,Cost
+1,0,Car,20000,15000
+2,1,Engine,3500,2800
+3,2,Carburetor,250,200
+4,3,Float Chamber,45,30
+5,2,Fuel Injector,400,300
+6,1,Transmission,1200,950
+7,6,Gear Box,950,700
+8,5,Clutch,200,150
+9,8,Flywheel,150,100
+10,7,Pressure Plate,110,80
+11,1,Suspension System,1500,1100
+12,11,Shock Absorber,350,250
+13,11,Spring,200,150
+14,13,Wheel Assembly,800,600
+15,13,Tire,100,80
+16,14,Rim,120,90
