@@ -122,7 +122,7 @@ describeArgQ:{[argName;comment]
     };
 
 / describeResult[functionName;comment]
-/  This adds a comment describing the function's return value to the dummy "q" file.
+/  This adds a comment describing the function's return value to the] dummy "q" file.
 /  Typically, this is placed immediately after the last "describeArg" entry for this function.
 /  Nothing is added to the k4Unit csv file. 
 describeResult: {[functionName;comment]
@@ -138,15 +138,16 @@ describeResult: {[functionName;comment]
 / checks if all tests passed, displays the test results, and returns the test results.
 
 runTests:{
+  delete from KUTR; 
   KUltf[bddCurrentTestSet];  / Set up the test environment
   KUrt[];  / Run the tests
-  ft::select code: trunc[50] each string each code, timestamp from KUTR where not ok;
+  ft::select code: trunc[50] each str each code, timestamp from KUTR where not ok;
+  er::$[0=count ft; (); checkVector reverse "~" vs str exec last code from KUTR where not ok] ;
   result: $[(count ft) ~ 0; "All tests passed"; ft];  / Check if all tests passed
   result  / Return the test results
  };
 
-// Get the right row 
-
+/ Get the right row 
 findRow: {
  index: $[x >= 0; x; ((count ft) + x)];   
  ft index
@@ -155,4 +156,56 @@ findRow: {
 / trucate a char vector y to x length
 trunc:{$[x<count y;x#y;y]}
 
- 
+/ convert to string, but leave strings alone
+str:{10=type x; x; string x} ;
+
+/ get dimensions of a nested list
+shape:{$[0=d:depth x; 
+  0#0j; 
+  d#{first raze over x}each(d{each[x;]}\count)@\:x]
+  }; 
+
+/ checkVector[list-of-q-statements]
+/  Evaluates the statements, producing a list of descriptions of the results 
+checkVector: {evaluate each x}  ;
+evaluate:{  
+  result: .Q.trp[ value; 0N!x; {[e;bt] 0N!formatError[e; .Q.sbt bt]} ] ;
+  checkResult result
+ } ; 
+
+formatError:{[e;sbt]
+   e:$[10=type e; e; string e] ;
+   sbt:"\n ", trim first "\n" vs sbt ;
+   "Error: ", ltrim $[("error"~ lower 5# e) and e[5] in (" "; ":"); 6_e; e]
+ };
+
+checkResult:{
+  out:()!() ;
+  out[`]: (::) ;
+  out[`isList]: 0<=type x ; 
+  out[`length]: count x   ;   
+  out[`shape]: "" ; /shape x    ;
+  out[`type]: getType x   ;   
+  out[`avg]:  agg[avg] x  ;
+  out[`min]:  agg[min] x  ;
+  out[`max]:  agg[max] x  ;
+  if[(10=type x) and "Error:"~6#x; out[`type]:`error] ;
+  `_ out  
+ } ; 
+
+getType:{[x]
+  num:abs type x ; 
+  if[num<20; :atypes num] ;
+  if[num within (20;76); :"enum"] ;
+  if[num within (77;97); :"type ", num] ;
+  if[num=98; :"table"] ;
+  if[num=99; :$[98= type key x; "keyed table"; "dictionary"]] ;
+  if[num within (100;111); :"function"] ;
+  if[num>111; :"type ", num] ;
+ };
+
+agg:{[f;v] @[f; (raze/) v; 0n]} ;
+atypes:(0 1 2 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19h)!("general"; "boolean"; "guid"; "byte";
+  "short"; "int"; "long"; "real"; "float"; "char"; "symbol"; "timestamp"; "month"; "date"; "datetime";
+  "timespan"; "minute"; "second"; "time") ;
+
